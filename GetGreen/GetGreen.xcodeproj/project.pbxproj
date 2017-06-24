@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32E60BCE22DF007C398B7920 /* Pods_GetGreenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FFE0750D58FAF75B5C1C11 /* Pods_GetGreenTests.framework */; };
+		8116D0691EFECA7C00FF45A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8116D0681EFECA7C00FF45A4 /* AppDelegate.swift */; };
+		8116D06B1EFECA7C00FF45A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8116D06A1EFECA7C00FF45A4 /* ViewController.swift */; };
+		8116D06E1EFECA7C00FF45A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8116D06C1EFECA7C00FF45A4 /* Main.storyboard */; };
+		8116D0701EFECA7C00FF45A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8116D06F1EFECA7C00FF45A4 /* Assets.xcassets */; };
+		8116D0731EFECA7C00FF45A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8116D0711EFECA7C00FF45A4 /* LaunchScreen.storyboard */; };
+		8116D07E1EFECA7C00FF45A4 /* GetGreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8116D07D1EFECA7C00FF45A4 /* GetGreenTests.swift */; };
+		AB8EB7B348331689A54DDBD8 /* Pods_GetGreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A501A05DB5AA26A6F0D7CEE /* Pods_GetGreen.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8116D07A1EFECA7C00FF45A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8116D05D1EFECA7C00FF45A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8116D0641EFECA7C00FF45A4;
+			remoteInfo = GetGreen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0522F35DB78FAD5016C9F658 /* Pods-GetGreenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGreenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetGreenTests/Pods-GetGreenTests.release.xcconfig"; sourceTree = "<group>"; };
+		3A501A05DB5AA26A6F0D7CEE /* Pods_GetGreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetGreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55EBC6CB8CBDA6B3710A72C0 /* Pods-GetGreenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGreenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetGreenTests/Pods-GetGreenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8116D0651EFECA7C00FF45A4 /* GetGreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetGreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8116D0681EFECA7C00FF45A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8116D06A1EFECA7C00FF45A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8116D06D1EFECA7C00FF45A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8116D06F1EFECA7C00FF45A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8116D0721EFECA7C00FF45A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8116D0741EFECA7C00FF45A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8116D0791EFECA7C00FF45A4 /* GetGreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetGreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8116D07D1EFECA7C00FF45A4 /* GetGreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGreenTests.swift; sourceTree = "<group>"; };
+		8116D07F1EFECA7C00FF45A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B26B6A780691AAE21BCC6E /* Pods-GetGreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetGreen/Pods-GetGreen.release.xcconfig"; sourceTree = "<group>"; };
+		C6D718429579A7484E5BC592 /* Pods-GetGreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetGreen/Pods-GetGreen.debug.xcconfig"; sourceTree = "<group>"; };
+		D2FFE0750D58FAF75B5C1C11 /* Pods_GetGreenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetGreenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8116D0621EFECA7C00FF45A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB8EB7B348331689A54DDBD8 /* Pods_GetGreen.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8116D0761EFECA7C00FF45A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E60BCE22DF007C398B7920 /* Pods_GetGreenTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		391A94D8CB5AE5FC47ED6FC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A501A05DB5AA26A6F0D7CEE /* Pods_GetGreen.framework */,
+				D2FFE0750D58FAF75B5C1C11 /* Pods_GetGreenTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64333306AAF91996265CC19D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6D718429579A7484E5BC592 /* Pods-GetGreen.debug.xcconfig */,
+				81B26B6A780691AAE21BCC6E /* Pods-GetGreen.release.xcconfig */,
+				55EBC6CB8CBDA6B3710A72C0 /* Pods-GetGreenTests.debug.xcconfig */,
+				0522F35DB78FAD5016C9F658 /* Pods-GetGreenTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8116D05C1EFECA7C00FF45A4 = {
+			isa = PBXGroup;
+			children = (
+				8116D0671EFECA7C00FF45A4 /* GetGreen */,
+				8116D07C1EFECA7C00FF45A4 /* GetGreenTests */,
+				8116D0661EFECA7C00FF45A4 /* Products */,
+				64333306AAF91996265CC19D /* Pods */,
+				391A94D8CB5AE5FC47ED6FC3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8116D0661EFECA7C00FF45A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8116D0651EFECA7C00FF45A4 /* GetGreen.app */,
+				8116D0791EFECA7C00FF45A4 /* GetGreenTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8116D0671EFECA7C00FF45A4 /* GetGreen */ = {
+			isa = PBXGroup;
+			children = (
+				8116D0681EFECA7C00FF45A4 /* AppDelegate.swift */,
+				8116D06A1EFECA7C00FF45A4 /* ViewController.swift */,
+				8116D06C1EFECA7C00FF45A4 /* Main.storyboard */,
+				8116D06F1EFECA7C00FF45A4 /* Assets.xcassets */,
+				8116D0711EFECA7C00FF45A4 /* LaunchScreen.storyboard */,
+				8116D0741EFECA7C00FF45A4 /* Info.plist */,
+			);
+			path = GetGreen;
+			sourceTree = "<group>";
+		};
+		8116D07C1EFECA7C00FF45A4 /* GetGreenTests */ = {
+			isa = PBXGroup;
+			children = (
+				8116D07D1EFECA7C00FF45A4 /* GetGreenTests.swift */,
+				8116D07F1EFECA7C00FF45A4 /* Info.plist */,
+			);
+			path = GetGreenTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8116D0641EFECA7C00FF45A4 /* GetGreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8116D0821EFECA7C00FF45A4 /* Build configuration list for PBXNativeTarget "GetGreen" */;
+			buildPhases = (
+				E837F2932AE64953E726CB9F /* [CP] Check Pods Manifest.lock */,
+				8116D0611EFECA7C00FF45A4 /* Sources */,
+				8116D0621EFECA7C00FF45A4 /* Frameworks */,
+				8116D0631EFECA7C00FF45A4 /* Resources */,
+				5BC445AF64476CDFD3908EBA /* [CP] Embed Pods Frameworks */,
+				E60F926B882EA224F1B470AF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GetGreen;
+			productName = GetGreen;
+			productReference = 8116D0651EFECA7C00FF45A4 /* GetGreen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8116D0781EFECA7C00FF45A4 /* GetGreenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8116D0851EFECA7C00FF45A4 /* Build configuration list for PBXNativeTarget "GetGreenTests" */;
+			buildPhases = (
+				88ADC4FEDA8B4C393EFBFC61 /* [CP] Check Pods Manifest.lock */,
+				8116D0751EFECA7C00FF45A4 /* Sources */,
+				8116D0761EFECA7C00FF45A4 /* Frameworks */,
+				8116D0771EFECA7C00FF45A4 /* Resources */,
+				C3C3CF8CA26E9D3074112F04 /* [CP] Embed Pods Frameworks */,
+				F8E9924124B3135C20E1ACD2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8116D07B1EFECA7C00FF45A4 /* PBXTargetDependency */,
+			);
+			name = GetGreenTests;
+			productName = GetGreenTests;
+			productReference = 8116D0791EFECA7C00FF45A4 /* GetGreenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8116D05D1EFECA7C00FF45A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Liam Kane";
+				TargetAttributes = {
+					8116D0641EFECA7C00FF45A4 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N2N3K3G7JW;
+						ProvisioningStyle = Automatic;
+					};
+					8116D0781EFECA7C00FF45A4 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N2N3K3G7JW;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8116D0641EFECA7C00FF45A4;
+					};
+				};
+			};
+			buildConfigurationList = 8116D0601EFECA7C00FF45A4 /* Build configuration list for PBXProject "GetGreen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8116D05C1EFECA7C00FF45A4;
+			productRefGroup = 8116D0661EFECA7C00FF45A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8116D0641EFECA7C00FF45A4 /* GetGreen */,
+				8116D0781EFECA7C00FF45A4 /* GetGreenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8116D0631EFECA7C00FF45A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8116D0731EFECA7C00FF45A4 /* LaunchScreen.storyboard in Resources */,
+				8116D0701EFECA7C00FF45A4 /* Assets.xcassets in Resources */,
+				8116D06E1EFECA7C00FF45A4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8116D0771EFECA7C00FF45A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BC445AF64476CDFD3908EBA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetGreen/Pods-GetGreen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88ADC4FEDA8B4C393EFBFC61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3C3CF8CA26E9D3074112F04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetGreenTests/Pods-GetGreenTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E60F926B882EA224F1B470AF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetGreen/Pods-GetGreen-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E837F2932AE64953E726CB9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F8E9924124B3135C20E1ACD2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetGreenTests/Pods-GetGreenTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8116D0611EFECA7C00FF45A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8116D06B1EFECA7C00FF45A4 /* ViewController.swift in Sources */,
+				8116D0691EFECA7C00FF45A4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8116D0751EFECA7C00FF45A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8116D07E1EFECA7C00FF45A4 /* GetGreenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8116D07B1EFECA7C00FF45A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8116D0641EFECA7C00FF45A4 /* GetGreen */;
+			targetProxy = 8116D07A1EFECA7C00FF45A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8116D06C1EFECA7C00FF45A4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8116D06D1EFECA7C00FF45A4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8116D0711EFECA7C00FF45A4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8116D0721EFECA7C00FF45A4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8116D0801EFECA7C00FF45A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8116D0811EFECA7C00FF45A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8116D0831EFECA7C00FF45A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D718429579A7484E5BC592 /* Pods-GetGreen.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N2N3K3G7JW;
+				INFOPLIST_FILE = GetGreen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyc.c4q.liamkane.GetGreen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8116D0841EFECA7C00FF45A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81B26B6A780691AAE21BCC6E /* Pods-GetGreen.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N2N3K3G7JW;
+				INFOPLIST_FILE = GetGreen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyc.c4q.liamkane.GetGreen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8116D0861EFECA7C00FF45A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55EBC6CB8CBDA6B3710A72C0 /* Pods-GetGreenTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N2N3K3G7JW;
+				INFOPLIST_FILE = GetGreenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyc.c4q.liamkane.GetGreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetGreen.app/GetGreen";
+			};
+			name = Debug;
+		};
+		8116D0871EFECA7C00FF45A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0522F35DB78FAD5016C9F658 /* Pods-GetGreenTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N2N3K3G7JW;
+				INFOPLIST_FILE = GetGreenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nyc.c4q.liamkane.GetGreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetGreen.app/GetGreen";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8116D0601EFECA7C00FF45A4 /* Build configuration list for PBXProject "GetGreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8116D0801EFECA7C00FF45A4 /* Debug */,
+				8116D0811EFECA7C00FF45A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8116D0821EFECA7C00FF45A4 /* Build configuration list for PBXNativeTarget "GetGreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8116D0831EFECA7C00FF45A4 /* Debug */,
+				8116D0841EFECA7C00FF45A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8116D0851EFECA7C00FF45A4 /* Build configuration list for PBXNativeTarget "GetGreenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8116D0861EFECA7C00FF45A4 /* Debug */,
+				8116D0871EFECA7C00FF45A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8116D05D1EFECA7C00FF45A4 /* Project object */;
+}
