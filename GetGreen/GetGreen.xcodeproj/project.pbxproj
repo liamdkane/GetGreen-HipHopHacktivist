@@ -17,6 +17,7 @@
 		81D318AF1EFEE4BC001E4E73 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D318AE1EFEE4BC001E4E73 /* LogInViewController.swift */; };
 		81D318B11EFEE81E001E4E73 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D318B01EFEE81E001E4E73 /* MapViewController.swift */; };
 		9CBF5DA71EFECFAE00807493 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */; };
+		9CBF5DA91EFED52D00807493 /* CommunityGardens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBF5DA81EFED52D00807493 /* CommunityGardens.swift */; };
 		AB8EB7B348331689A54DDBD8 /* Pods_GetGreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A501A05DB5AA26A6F0D7CEE /* Pods_GetGreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		81D318AE1EFEE4BC001E4E73 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		81D318B01EFEE81E001E4E73 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9CBF5DA81EFED52D00807493 /* CommunityGardens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGardens.swift; sourceTree = "<group>"; };
 		C6D718429579A7484E5BC592 /* Pods-GetGreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetGreen/Pods-GetGreen.debug.xcconfig"; sourceTree = "<group>"; };
 		D2FFE0750D58FAF75B5C1C11 /* Pods_GetGreenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetGreenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 				81D318AE1EFEE4BC001E4E73 /* LogInViewController.swift */,
 				81D318B01EFEE81E001E4E73 /* MapViewController.swift */,
 				8116D06C1EFECA7C00FF45A4 /* Main.storyboard */,
+				9CBF5DA81EFED52D00807493 /* CommunityGardens.swift */,
 				8116D06F1EFECA7C00FF45A4 /* Assets.xcassets */,
 				8116D0711EFECA7C00FF45A4 /* LaunchScreen.storyboard */,
 				9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */,
@@ -346,6 +349,7 @@
 				8116D0691EFECA7C00FF45A4 /* AppDelegate.swift in Sources */,
 				81D318AF1EFEE4BC001E4E73 /* LogInViewController.swift in Sources */,
 				81D318B11EFEE81E001E4E73 /* MapViewController.swift in Sources */,
+				9CBF5DA91EFED52D00807493 /* CommunityGardens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
