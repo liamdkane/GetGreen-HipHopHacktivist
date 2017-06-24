@@ -7,12 +7,40 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
+    
+    var communityGardens = [CommunityGardens]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
+        let url = URL(string: "https://data.cityofnewyork.us/resource/yes4-7zbb.json")!
+        Alamofire.request(url, method: .get, headers: headers).responseJSON { (jsonResponse) in
+            print(jsonResponse.result.value!)
+            
+            if let data = jsonResponse.data {
+                print("getting json: \(data)")
+                
+                do {
+                    let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    guard let responseData = jsonData as? [[String:Any]] else {
+                        print("Error parsing responseData")
+                        return
+                    }
+                    if let gardenObject = CommunityGardens.parseArray(from: responseData) {
+                        self.communityGardens = gardenObject
+                        dump(self.communityGardens)
+                    }
+                } catch {
+                    print("Error parsing JSON")
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
