@@ -14,6 +14,7 @@
 		8116D0701EFECA7C00FF45A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8116D06F1EFECA7C00FF45A4 /* Assets.xcassets */; };
 		8116D0731EFECA7C00FF45A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8116D0711EFECA7C00FF45A4 /* LaunchScreen.storyboard */; };
 		8116D07E1EFECA7C00FF45A4 /* GetGreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8116D07D1EFECA7C00FF45A4 /* GetGreenTests.swift */; };
+		9CBF5DA71EFECFAE00807493 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */; };
 		AB8EB7B348331689A54DDBD8 /* Pods_GetGreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A501A05DB5AA26A6F0D7CEE /* Pods_GetGreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		8116D07D1EFECA7C00FF45A4 /* GetGreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGreenTests.swift; sourceTree = "<group>"; };
 		8116D07F1EFECA7C00FF45A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B26B6A780691AAE21BCC6E /* Pods-GetGreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetGreen/Pods-GetGreen.release.xcconfig"; sourceTree = "<group>"; };
+		9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C6D718429579A7484E5BC592 /* Pods-GetGreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetGreen/Pods-GetGreen.debug.xcconfig"; sourceTree = "<group>"; };
 		D2FFE0750D58FAF75B5C1C11 /* Pods_GetGreenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetGreenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 				8116D06C1EFECA7C00FF45A4 /* Main.storyboard */,
 				8116D06F1EFECA7C00FF45A4 /* Assets.xcassets */,
 				8116D0711EFECA7C00FF45A4 /* LaunchScreen.storyboard */,
+				9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */,
 				8116D0741EFECA7C00FF45A4 /* Info.plist */,
 			);
 			path = GetGreen;
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8116D0731EFECA7C00FF45A4 /* LaunchScreen.storyboard in Resources */,
+				9CBF5DA71EFECFAE00807493 /* GoogleService-Info.plist in Resources */,
 				8116D0701EFECA7C00FF45A4 /* Assets.xcassets in Resources */,
 				8116D06E1EFECA7C00FF45A4 /* Main.storyboard in Resources */,
 			);
@@ -262,7 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3C3CF8CA26E9D3074112F04 /* [CP] Embed Pods Frameworks */ = {
@@ -307,7 +311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F8E9924124B3135C20E1ACD2 /* [CP] Copy Pods Resources */ = {
@@ -549,6 +553,7 @@
 				8116D0841EFECA7C00FF45A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8116D0851EFECA7C00FF45A4 /* Build configuration list for PBXNativeTarget "GetGreenTests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +562,7 @@
 				8116D0871EFECA7C00FF45A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

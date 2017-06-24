@@ -9,6 +9,7 @@ target 'GetGreen' do
 	pod ’SnapKit’
 	pod ‘Firebase’
 	pod ‘Alamofire’
+	pod 'Firebase/Core'
 
   target 'GetGreenTests' do
     inherit! :search_paths

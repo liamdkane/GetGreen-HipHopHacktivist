@@ -1,0 +1,6 @@
+framework module Pods_GetGreen {
+  umbrella header "Pods-GetGreen-umbrella.h"
+
+  export *
+  module * { export * }
+}
