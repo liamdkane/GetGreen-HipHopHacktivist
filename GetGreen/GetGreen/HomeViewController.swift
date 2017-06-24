@@ -14,14 +14,16 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var getGreenLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
+    var gradientLayer: CAGradientLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createGradientLayer()
+        setupViewHierarcy()
         getGreenLabel.text = "GetGreen"
         welcomeLabel.text = "Hey Bean, \n How you been?"
         logoImage.image = UIImage(named: "logo")
-        setupViewHierarcy()
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,6 +32,15 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - Set up view hierarchy
+    func createGradientLayer() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        
+        gradientLayer.colors = [UIColor(red:0.19, green:1.00, blue:0.58, alpha:1.0).cgColor, UIColor(red:0.19, green:1.00, blue:1.00, alpha:1.0).cgColor]
+        gradientLayer.locations = [0.0 , 1.0]
+        
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+    }
     
     func setupViewHierarcy() {
         self.view.addSubview(menuView)
@@ -86,24 +97,24 @@ class HomeViewController: UIViewController {
     
     func findGardenPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let svc = storyboard.instantiateViewController(withIdentifier: "showMap")
-        self.present(svc, animated: true, completion: nil)
+        let map = storyboard.instantiateViewController(withIdentifier: "showMap")
+        self.present(map, animated: true, completion: nil)
     }
     
     func greenFactsPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let svc = storyboard.instantiateViewController(withIdentifier: "showFacts")
-        self.present(svc, animated: true, completion: nil)
+        let facts = storyboard.instantiateViewController(withIdentifier: "showFacts")
+        self.present(facts, animated: true, completion: nil)
     }
     
     func projectsPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let svc = storyboard.instantiateViewController(withIdentifier: "showProjects")
-        self.present(svc, animated: true, completion: nil)
+        let proj = storyboard.instantiateViewController(withIdentifier: "showProjects")
+        self.present(proj, animated: true, completion: nil)
     }
     
     func connectPressed() {
-        
+        print("connect page here")
     }
     
     lazy var menuView: UIView = {
