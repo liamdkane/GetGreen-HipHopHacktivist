@@ -11,6 +11,7 @@ target 'GetGreen' do
 	pod ‘Alamofire’
 	pod 'Firebase/Core'
   	pod 'Firebase/Auth'
+	pod 'Firebase/Database'
 
   target 'GetGreenTests' do
     inherit! :search_paths

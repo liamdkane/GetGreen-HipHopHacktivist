@@ -16,6 +16,8 @@
 		8116D07E1EFECA7C00FF45A4 /* GetGreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8116D07D1EFECA7C00FF45A4 /* GetGreenTests.swift */; };
 		81D318AF1EFEE4BC001E4E73 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D318AE1EFEE4BC001E4E73 /* LogInViewController.swift */; };
 		81D318B11EFEE81E001E4E73 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D318B01EFEE81E001E4E73 /* MapViewController.swift */; };
+		9C71FC241EFF1D8C00770999 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71FC231EFF1D8C00770999 /* ProjectsViewController.swift */; };
+		9C71FC261EFF1FFC00770999 /* GreenFactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71FC251EFF1FFC00770999 /* GreenFactsViewController.swift */; };
 		9CBF5DA71EFECFAE00807493 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */; };
 		9CBF5DA91EFED52D00807493 /* CommunityGardens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBF5DA81EFED52D00807493 /* CommunityGardens.swift */; };
 		9CBF5DAB1EFEF30F00807493 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBF5DAA1EFEF30E00807493 /* HomeViewController.swift */; };
@@ -49,6 +51,8 @@
 		81B26B6A780691AAE21BCC6E /* Pods-GetGreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetGreen/Pods-GetGreen.release.xcconfig"; sourceTree = "<group>"; };
 		81D318AE1EFEE4BC001E4E73 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		81D318B01EFEE81E001E4E73 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9C71FC231EFF1D8C00770999 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		9C71FC251EFF1FFC00770999 /* GreenFactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenFactsViewController.swift; sourceTree = "<group>"; };
 		9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9CBF5DA81EFED52D00807493 /* CommunityGardens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGardens.swift; sourceTree = "<group>"; };
 		9CBF5DAA1EFEF30E00807493 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -121,15 +125,10 @@
 			children = (
 				8116D0681EFECA7C00FF45A4 /* AppDelegate.swift */,
 				8116D06A1EFECA7C00FF45A4 /* ViewController.swift */,
-				81D318AE1EFEE4BC001E4E73 /* LogInViewController.swift */,
-				81D318B01EFEE81E001E4E73 /* MapViewController.swift */,
-				8116D06C1EFECA7C00FF45A4 /* Main.storyboard */,
-				9CBF5DAA1EFEF30E00807493 /* HomeViewController.swift */,
-				9CBF5DA81EFED52D00807493 /* CommunityGardens.swift */,
-				8116D06F1EFECA7C00FF45A4 /* Assets.xcassets */,
-				8116D0711EFECA7C00FF45A4 /* LaunchScreen.storyboard */,
-				9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */,
-				8116D0741EFECA7C00FF45A4 /* Info.plist */,
+				9C71FC271EFF201100770999 /* ViewController */,
+				9C71FC281EFF201900770999 /* Model */,
+				9C71FC291EFF201E00770999 /* UI */,
+				9C71FC2A1EFF202400770999 /* Helper */,
 			);
 			path = GetGreen;
 			sourceTree = "<group>";
@@ -141,6 +140,45 @@
 				8116D07F1EFECA7C00FF45A4 /* Info.plist */,
 			);
 			path = GetGreenTests;
+			sourceTree = "<group>";
+		};
+		9C71FC271EFF201100770999 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				81D318AE1EFEE4BC001E4E73 /* LogInViewController.swift */,
+				81D318B01EFEE81E001E4E73 /* MapViewController.swift */,
+				9C71FC231EFF1D8C00770999 /* ProjectsViewController.swift */,
+				9CBF5DAA1EFEF30E00807493 /* HomeViewController.swift */,
+				9C71FC251EFF1FFC00770999 /* GreenFactsViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9C71FC281EFF201900770999 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CBF5DA81EFED52D00807493 /* CommunityGardens.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9C71FC291EFF201E00770999 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8116D06F1EFECA7C00FF45A4 /* Assets.xcassets */,
+				8116D06C1EFECA7C00FF45A4 /* Main.storyboard */,
+				8116D0711EFECA7C00FF45A4 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		9C71FC2A1EFF202400770999 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9CBF5DA61EFECFAE00807493 /* GoogleService-Info.plist */,
+				8116D0741EFECA7C00FF45A4 /* Info.plist */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,10 +388,12 @@
 			files = (
 				8116D06B1EFECA7C00FF45A4 /* ViewController.swift in Sources */,
 				8116D0691EFECA7C00FF45A4 /* AppDelegate.swift in Sources */,
+				9C71FC261EFF1FFC00770999 /* GreenFactsViewController.swift in Sources */,
 				81D318AF1EFEE4BC001E4E73 /* LogInViewController.swift in Sources */,
 				81D318B11EFEE81E001E4E73 /* MapViewController.swift in Sources */,
 				9CBF5DA91EFED52D00807493 /* CommunityGardens.swift in Sources */,
 				9CBF5DAB1EFEF30F00807493 /* HomeViewController.swift in Sources */,
+				9C71FC241EFF1D8C00770999 /* ProjectsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,13 +25,15 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
-        self.view.backgroundColor = .blue
+
         if let email = emailTextField.text, let password = passwordTextField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if user != nil {
                     let alert = UIAlertController(title: "Login Successful!", message: "Welcome", preferredStyle: .actionSheet)
                     let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        // segue to home page or something
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let svc = storyboard.instantiateViewController(withIdentifier: "showHome")
+                        self.present(svc, animated: true, completion: nil)
                     })
                     alert.addAction(ok)
                     self.present(alert, animated: true, completion: nil)
@@ -46,12 +48,14 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        self.view.backgroundColor = .white
+
         if let email = emailTextField.text, let password = passwordTextField.text {
             FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                 if user != nil {
                     print("User can register!!")
-                    // segue to home page
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let svc = storyboard.instantiateViewController(withIdentifier: "showHome")
+                    self.present(svc, animated: true, completion: nil)
                 }
                 else {
                     let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
@@ -64,9 +68,9 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func skipButtonPressed(_ sender: UIButton) {
-        let homeVC = HomeViewController()
-        let navVC = UINavigationController(rootViewController: homeVC)
-        self.present(navVC, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let svc = storyboard.instantiateViewController(withIdentifier: "showHome")
+        self.present(svc, animated: true, completion: nil)
     }
     
     /*
