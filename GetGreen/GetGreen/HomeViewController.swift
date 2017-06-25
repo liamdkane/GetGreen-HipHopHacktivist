@@ -24,11 +24,23 @@ class HomeViewController: UIViewController {
         getGreenLabel.text = "GetGreen"
         welcomeLabel.text = "Hey Bean, \n How you been?"
         logoImage.image = UIImage(named: "logo")
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(backToHome))
+        view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func backToHome() {
+        setupViewHierarcy()
+        logoImage.snp.remakeConstraints { (view) in
+            view.center.equalToSuperview()
+        }
+        self.getGreenLabel.alpha = 1
+        self.welcomeLabel.alpha = 1
     }
     
     // MARK: - Set up view hierarchy
@@ -128,6 +140,7 @@ class HomeViewController: UIViewController {
         button.setTitle("Find Garden", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(findGardenPressed), for: .touchUpInside)
+        button.titleLabel?.font = UIFont(name: "Avenir", size: 20)
         return button
     }()
     
@@ -136,6 +149,7 @@ class HomeViewController: UIViewController {
         button.setTitle("Green Facts", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(greenFactsPressed), for: .touchUpInside)
+        button.titleLabel?.font = UIFont(name: "Avenir", size: 20)
         return button
     }()
     
@@ -144,6 +158,7 @@ class HomeViewController: UIViewController {
         button.setTitle("Projects", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(projectsPressed), for: .touchUpInside)
+        button.titleLabel?.font = UIFont(name: "Avenir", size: 20)
         return button
     }()
     
@@ -152,6 +167,7 @@ class HomeViewController: UIViewController {
         button.setTitle("Connect", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(connectPressed), for: .touchUpInside)
+        button.titleLabel?.font = UIFont(name: "Avenir", size: 20)
         return button
     }()
 

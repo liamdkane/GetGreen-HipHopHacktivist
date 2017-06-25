@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import WebKit
+import SnapKit
 
-class GreenFactsViewController: UIViewController {
+class GreenFactsViewController: UIViewController, WKUIDelegate {
+
+    var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupWebView()
+        let path = Bundle.main.path(forResource: "embedded", ofType: "html")
+        let dir = URL(fileURLWithPath: Bundle.main.bundlePath)
+        // loading the file to the internet onto our webview
+        let myURL = URL(fileURLWithPath: path!)
+        webView.loadFileURL(myURL, allowingReadAccessTo: dir)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +30,9 @@ class GreenFactsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupWebView() {
+        
+    }
 
     /*
     // MARK: - Navigation

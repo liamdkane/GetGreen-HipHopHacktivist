@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class ProjectsViewController: UIViewController {
+class ProjectsViewController: UIViewController, UITextViewDelegate {
 
     var databaseReference: FIRDatabaseReference!
     @IBOutlet weak var textView: UITextView!
@@ -23,21 +23,27 @@ class ProjectsViewController: UIViewController {
         ]
         newProject.setValue(newItem)
         showSuccessAlert()
+        textView.text = "Write your project idea here!"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        textView.delegate = self
         databaseReference = FIRDatabase.database().reference()
         fetchDatabase()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Methods
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+    }
+    
     func showSuccessAlert() {
         let alert = UIAlertController(title: "Success!", message: "Your project has been posted", preferredStyle: .actionSheet)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -57,6 +63,10 @@ class ProjectsViewController: UIViewController {
 //        }) { (error) in
 //            print(error.localizedDescription)
 //        }
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*

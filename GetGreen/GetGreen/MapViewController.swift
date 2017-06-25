@@ -11,84 +11,220 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate {
-
     @IBOutlet weak var greenMapView: MKMapView!
     @IBOutlet weak var greenSearchBar: UISearchBar!
+    
+    let notificationCenter = NotificationCenter.default
+    var communityGardens: [CommunityGardens]? {
+        didSet {
+            loadAnnotations()
+        }
+    }
+    
     let locationManager: CLLocationManager = {
         let locMan: CLLocationManager = CLLocationManager()
-        // more here later
         locMan.desiredAccuracy = 100.0
-        locMan.distanceFilter = 50.0
+        locMan.distanceFilter = 500.0
         return locMan
     }()
-
-    let geocoder: CLGeocoder = CLGeocoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         greenMapView.delegate = self
         greenSearchBar.delegate = self
+        
     }
-
+    
+    @IBAction func refreshMap(_ sender: UIButton) {
+        loadAnnotations()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+            let gardens = appDelegate.communityGardens {
+            self.communityGardens = gardens
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(parseNotification(_:)),
+                                               name: kGardensNotificationName,
+                                               object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func parseNotification(_ notification: Notification) {
+        if let gardens = notification.object as? [CommunityGardens] {
+            self.communityGardens = gardens
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - CLLocationManager Delegate
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("All good")
+            manager.startUpdatingLocation()
+            //      manager.startMonitoringSignificantLocationChanges()
+            
+        case .denied, .restricted:
+            print("NOPE")
+            
+        case .notDetermined:
+            print("IDK")
+            locationManager.requestWhenInUseAuthorization()
+            
+        }
+        
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Oh woah, locations updated")
-        //    dump(locations)
         
         guard let validLocation: CLLocation = locations.last else { return }
-        
-        // Display this with only 4 signification digits after the decimal
-        // Hint: Use a specific string formatting initializer
-        // Or: Do it the harder way with removing a range of string.
-        
-        // May the odds be ever in your favor. <mockingbird>
-        //    self.latLabel.text = "Lat: \(validLocation.coordinate.latitude)"
-        //    self.longLabel.text = "Long: \(validLocation.coordinate.longitude)"
-        
-        //mapView.setCenter(validLocation.coordinate, animated: true)
-        
-        //This will make the map zoom making the center the center of the map and the bounds the following parameters
         greenMapView.setRegion(MKCoordinateRegionMakeWithDistance(validLocation.coordinate, 500.0, 500.0), animated: true)
-        
-        let pinAnnotation = MKPointAnnotation()
-        pinAnnotation.title = "I FOUND WALDO!"
-        pinAnnotation.coordinate = validLocation.coordinate
-        greenMapView.addAnnotation(pinAnnotation)
-        
         let circleOverlay: MKCircle = MKCircle(center: validLocation.coordinate, radius: 50.0)
         greenMapView.add(circleOverlay)
         
-        geocoder.reverseGeocodeLocation(validLocation) { (placemarks: [CLPlacemark]?, error: Error?) in
-            if error != nil {
-                dump(error!)
-            }
-            self.greenMapView.setCenter(validLocation.coordinate, animated: true)
+    }
+    func loadAnnotations() {
+        
+        if let validGardens = self.communityGardens {
+            var annotations = [MKAnnotation]()
             
-            guard
-                let validPlaceMarks: [CLPlacemark] = placemarks,
-                let validPlace: CLPlacemark = validPlaceMarks.last
-                else {
-                    return
+            for garden in validGardens {
+                
+                print(garden.address)
+                let geocoder: CLGeocoder = CLGeocoder()
+                geocoder.geocodeAddressString(garden.address, completionHandler: { (placemarks, error) in
+                    print(error.debugDescription)
+                    
+                    if let validPlacemarks = placemarks,
+                        let location = validPlacemarks.first?.location{
+                        
+                        let annotation = GetGreenAnnotation(location: location, garden: garden)
+                        annotations.append(annotation)
+                        DispatchQueue.main.async {
+                            self.greenMapView.addAnnotation(annotation)
+                        }
+                    }
+                })
             }
             
-            //self.geocodeLocationLabel.text = "\(validPlace.name!) \t \(validPlace.locality!)"
+            
+            validGardens.forEach({ (garden) in
+                
+                
+                
+            })
+            //            print(annotations.count)
+            //            greenMapView.addAnnotations(annotations)
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        
+        if annotation is MKUserLocation {
+            return nil
+        } else {
+            let annotationIdentifier = "AnnotationIdentifier"
+            let mapAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) as? AnnotationView ?? AnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            mapAnnotationView.canShowCallout = false
+            mapAnnotationView.annotation = annotation
+            
+            
+            
+            let btn = UIButton(type: .detailDisclosure)
+            mapAnnotationView.rightCalloutAccessoryView = btn
+            mapAnnotationView.image = UIImage(named: "getgreenlogo")
+            return mapAnnotationView
+        }
     }
-    */
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let annotation = view.annotation as! GetGreenAnnotation
+        let garden = annotation.garden
+        let placeName = garden.name
+        let placeInfo = garden.address + "\n" + garden.neighborhood
+        
+        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        let annotation = view.annotation as! GetGreenAnnotation
+        let garden = annotation.garden
+        let placeName = garden.name
+        let placeInfo = garden.address + "\n" + garden.neighborhood
+        
+        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    /*
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+}
+class GetGreenAnnotation: NSObject, MKAnnotation{
+    
+    var title: String?
+    var coordinate: CLLocationCoordinate2D
+    let image = #imageLiteral(resourceName: "getgreenlogo")
+    let garden: CommunityGardens
+    
+    init(location: CLLocation, garden: CommunityGardens) {
+        self.coordinate = location.coordinate
+        self.garden = garden
+    }
+}
 
+class AnnotationView: MKAnnotationView {
+    //    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    //        let hitView = super.hitTest(point, with: event)
+    //        if (hitView != nil)
+    //        {
+    //            //self.superview?.bringSubview(toFront: self)
+    //        }
+    //
+    //        return hitView
+    //    }
+    //    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    //        let rect = self.bounds;
+    //        var isInside: Bool = rect.contains(point);
+    //
+    //        if(!isInside)
+    //        {
+    //            for view in self.subviews
+    //            {
+    //                isInside = view.frame.contains(point);
+    //                if isInside
+    //                {
+    //                    break;
+    //                }
+    //            }
+    //        }
+    //        return isInside;
+    //    }
 }
