@@ -7,31 +7,70 @@
 //
 
 import UIKit
-import Alamofire
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://data.cityofnewyork.us/resource/yes4-7zbb.json")!
-        Alamofire.request(url).responseJSON { (jsonResponse) in
-            print(jsonResponse.result.value!)
-        }
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
-        self.view.backgroundColor = .blue
+
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+                if user != nil {
+                    let alert = UIAlertController(title: "Login Successful!", message: "Welcome", preferredStyle: .actionSheet)
+                    let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let svc = storyboard.instantiateViewController(withIdentifier: "showHome")
+                        self.present(svc, animated: true, completion: nil)
+                    })
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "Login failed!", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            })
+        }
     }
+    
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        self.view.backgroundColor = .white
+
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                if user != nil {
+                    print("User can register!!")
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let svc = storyboard.instantiateViewController(withIdentifier: "showHome")
+                    self.present(svc, animated: true, completion: nil)
+                }
+                else {
+                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            })
+        }
     }
+    
     @IBAction func skipButtonPressed(_ sender: UIButton) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let svc = storyboard.instantiateViewController(withIdentifier: "showHome")
+        self.present(svc, animated: true, completion: nil)
     }
     
     /*
